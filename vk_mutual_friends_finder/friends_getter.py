@@ -4,10 +4,13 @@ import sys
 
 class FriendsGetter:
 
-    def _is_number(self, s):
+    def _is_positive_number(self, s):
         try:
-            int(s)
-            return True
+            n = int(s)
+            if n > 0:
+                return True
+            else:
+                return False
         except ValueError:
             return False
 
@@ -16,14 +19,15 @@ class FriendsGetter:
         as string or int and returns friends as set
 
         I really have no idea how to write a full test for it
-        because we haven't immutable users.
+        because we haven't immutable users. But I still can test
+        assertion on incorrect id's.
         """
-        assert self._is_number(user_id), "not correct id"
+        assert self._is_positive_number(user_id), "not correct id"
         api = pyvkontakte.VkontakteApi()
         return set(api.call('friends.get', user_id=user_id)['items'])
+
+
 if __name__ == '__main__':
     fg = FriendsGetter()
-    print(fg.get_friends(1))  # Pavel Durov's (vkontakte's founder) id
-    print(fg.get_friends('1'))
-    print(fg.get_friends("uuuuuu"))
-    print(fg.get_friends(""))
+    print("Pavel Durov's friends:")
+    print(fg.get_friends(1))  # 1 == Pavel Durov's (vkontakte's founder) id
