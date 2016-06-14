@@ -9,6 +9,7 @@ def get_names_of_users(set_of_users):
         Caution: It can't work with more than 1000 people,
         it's vkapi's feauture.
     """
+    VK_ADRESS = "https://vk.com/"
     assert type(set_of_users) == set, "Not set given"
     if (len(set_of_users) > 1000):
         print("only first thousand of users will be shown.")
@@ -18,7 +19,7 @@ def get_names_of_users(set_of_users):
     user = collections.namedtuple(
         'user', ['adress', 'first_name', 'last_name'])
     result = [user(
-        adress=usr['id'],
+        adress=VK_ADRESS + str(usr['id']),
         first_name=usr['first_name'],
         last_name=usr['last_name']
         )
