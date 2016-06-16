@@ -11,5 +11,6 @@ def test_get_names_of_friends():
     durov = gnfu.get_names_of_users(set((1, )))[0]
     assert isinstance(durov, tuple),\
         "Function must return namedtuple.".format(type_of_result)
-    assert durov.last_name == "Дуров" and durov.first_name == "Павел",\
+    assert durov.last_name == "Дуров" and durov.first_name == "Павел" \
+        and durov.id == 1, \
         "Wrong result returned or Pavel Durov changed his name :)"
