@@ -9,7 +9,7 @@ def get_names_of_users(set_of_users):
         Caution: It can't work with more than 1000 people,
         it's vkapi's feauture.
     """
-    VK_ADRESS = "https://vk.com/"
+    VK_ADRESS = "https://vk.com/id"
     assert type(set_of_users) == set, "Not set given"
     if (len(set_of_users) > 1000):
         print("only first thousand of users will be shown.")
