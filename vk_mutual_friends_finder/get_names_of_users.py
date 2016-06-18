@@ -1,5 +1,5 @@
-import collections
 import pyvkontakte
+from collections import namedtuple
 
 
 def get_names_of_users(set_of_users):
@@ -16,7 +16,7 @@ def get_names_of_users(set_of_users):
     api = pyvkontakte.VkontakteApi()
     string_of_ids = ",".join(map(str, set_of_users))
     response = api.call("users.get", user_ids=string_of_ids, v='5.8')
-    user = collections.namedtuple(
+    user = namedtuple(
         'user', ['adress', 'first_name', 'last_name', 'id'])
     result = [user(
         adress=VK_ADRESS + str(usr['id']),
