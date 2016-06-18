@@ -3,7 +3,7 @@ from collections import namedtuple
 
 
 def get_names_of_users(set_of_users):
-    """Gets set of user's ids and returns namedtuple
+    """Takes set of user's ids and returns namedtuple
         with their names, last names and link on their pages.
 
         Caution: It can't work with more than 1000 people,

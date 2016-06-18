@@ -1,5 +1,5 @@
 def get_id_by_link(link):
-    """Gets link on vk profile and returns identificator of user, that can
+    """Takes link on vk profile and returns identificator of user, that can
     be  used in vkapi functions.
 
     Vkontakte has to types of links:
