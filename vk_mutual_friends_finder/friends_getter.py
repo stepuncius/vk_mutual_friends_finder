@@ -25,4 +25,4 @@ class FriendsGetter:
         if not self._is_positive_number(user_id):
             user_id = get_names_of_users(set([user_id]))[0].id
         api = pyvkontakte.VkontakteApi()
-        return set(api.call('friends.get', user_id=user_id)['items'])
+        return set(api.call('friends.get', user_id=user_id, v='5.8')['items'])
