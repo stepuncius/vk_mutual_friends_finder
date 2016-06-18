@@ -19,8 +19,7 @@ class FriendsGetter:
         as string or int and returns friends as set
 
         I really have no idea how to write a full test for it
-        because we haven't immutable users. But I still can test
-        assertion on incorrect id's.
+        because we haven't immutable users.
         """
         # if user_id is alias, replace it with id
         if not self._is_positive_number(user_id):
